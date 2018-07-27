@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>《每日头条》信息创造价值-你关心的才是头条</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/mui.pullToRefresh.js"></script>
+    <script type="text/javascript" src="js/mui.pullToRefresh.material.js"></script>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" charset="utf-8">
+        mui.init({
+            gestureConfig: {
+                doubletap: true
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <!-- 头部标题栏 -->
+    <header class="mui-bar mui-bar-nav">
+        <h1 class="mui-title">每日头条</h1>
+        <span class="mui-icon mui-icon-search"></span>
+    </header>
+    <!-- 主体内容 -->
+    <div class="mui-content">
+        <div class="mui-slider">
+            <!-- 分类栏 -->
+            <div class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+                <div class="mui-scroll" id="tbs">
+                </div>
+            </div>
+            <!-- 新闻媒体流 -->
+            <div class="mui-slider-group" id="container">
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/news.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+
+</html>

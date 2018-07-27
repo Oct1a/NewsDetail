@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>新闻详情</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="js/mui.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        mui.init()
+    </script>
+</head>
+
+<body>
+    <!-- 头部标题栏 -->
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">新闻详情</h1>
+    </header>
+    <!-- 主体内容 -->
+    <div class="mui-content">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <div class="mui-card">
+                    <!--页眉，放置标题-->
+                    <div class="mui-card-header">
+                        <h2>新闻标题</h2>
+                        <p>作者:<span id="author">小木豆</span>&nbsp;&nbsp;/&nbsp;&nbsp;发布日期: <span id="date">8818:88:88</span> </p>
+                    </div>
+                    <!--内容区-->
+                    <div class="mui-card-content"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        mui.plusReady(function() {
+                var current = plus.webview.currentWebview(); //获取当前页面
+                var info = current.news;
+                $('h2').text(info.title)
+                $('#author').text(info.author_name);
+                $('#date').text(info.date);
+                loadPage(info.url);
+            })
+            //获取链接内新闻文本
+        function loadPage(url) {
+            $.ajax({
+                url: url,
+                dataType: 'text',
+                success: function(data) {
+                    var startIndex = data.indexOf('<article');
+                    var endIndex = data.indexOf('</article>');
+                    var text = data.substring(startIndex, endIndex + 10);
+                    var dom = $(text);
+                    dom.find('#title').remove();
+                    $('.mui-card-content').append(dom);
+                }
+            })
+        }
+        mui('.mui-scroll-wrapper').scroll(); //滚动条
+    </script>
+
+</body>
+
+</html>

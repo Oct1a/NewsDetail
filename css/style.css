@@ -1,0 +1,79 @@
+.mui-bar .mui-title {
+    color: #FFFFFF;
+    font-family: '微软雅黑';
+    font-size: 20px;
+}
+
+.mui-media-object {
+    max-width: 55px!important;
+}
+
+.mui-scrollbar {
+    display: none !important;
+}
+
+.mui-slider-group {
+    position: fixed!important;
+    bottom: 0px;
+    top: 80px;
+    left: 0;
+    right: 0px;
+}
+
+.mui-segmented-control-inverted {
+    background: rgb(239, 239, 244);
+}
+
+.mui-slider {
+    overflow: visible;
+}
+
+.mui-control-item.mui-active {
+    color: rgb(212, 61, 61)!important;
+}
+
+.mui-bar.mui-bar-nav {
+    background-color: rgb(212, 61, 61);
+}
+
+.mui-action-back {
+    color: #FFFFFF;
+}
+
+.mui-icon-search {
+    float: right;
+    color: #FFFFFF;
+}
+
+
+/*超出文本用省略号表示*/
+
+.mui-media-body {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/*更改作者与日期字体大小*/
+
+.mui-ellipsis {
+    font-size: 0.9em;
+}
+
+.mui-card {
+    top: 50px;
+    margin-bottom: 80px;
+}
+
+.mui-card-content {
+    padding: 15px;
+}
+
+.mui-card-header h2 {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.mui-card-header {
+    display: inline-block;
+}
